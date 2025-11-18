@@ -1,18 +1,18 @@
-def spdef split_before_each_uppercases(formula):
-  new_list = []
-  start = 0
-  end = 0
-  for i in formula:
-    if i.isupper():
-      start = formula.index(i)
+def split_before_each_uppercases(formula):
+    new_list = []
+    start = 0
+    for i in range(len(formula)):     
+        char = formula[i]   
+        if i > 0 and char.isupper():       
+            new_list.append(formula[start:i])     
+            start = i      
+    if start < len(formula):
+        new_list.append(formula[start:])     
+    return new_list
 
-      for e in formula[start]:
-        if e.isupper:
-          end = formula.index(e)
-          new_list.append(formula[start:end])
-          formula[:end+1]
 
-  return new_list
+
+
 
 
 def split_at_first_digit(formula) :
