@@ -20,9 +20,9 @@ def split_at_first_digit(formula) :
     
     for i in formula[1:] :
           if i.isdigit():
-              split_list = [formula[0:formula.index(i)] , int(formula[formula.index(i):]) ] 
+              split_list = (formula[0:formula.index(i)] , int(formula[formula.index(i):]) )
               break
     if len(split_list) == 0:
-      split_list = [formula , 1]
+      split_list = (formula , 1)
     return split_list
 
